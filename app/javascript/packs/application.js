@@ -11,3 +11,11 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).ready(function() {
+  $('.datetimepicker').datetimepicker({});
+    return $('.datepicker').datetimepicker({
+      format: 'YYYY/MM/DD'
+    });
+  });
+});
