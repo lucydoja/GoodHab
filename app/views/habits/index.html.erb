@@ -5,6 +5,19 @@
 <div class="d-flex flex-row-reverse">
 <%= link_to 'New Log', new_habit_path, class:"btn btn-info" %>
 </div>
+
+<!-- Form desired date -->
+<%= form_with model: @habit do |form| %>
+  <div class="field form-group">
+      <%= form.label :date, class:"font-weight-bold" %></br>
+      <%= form.date_field :search_date , order: [:day, :month, :year], end_year: Date.today.year, required: true %>
+  </div>
+  <div class="actions my-2">
+    <%= form.submit class:'btn btn-info search-button'%>
+  </div>
+<% end %>
+
+<!-- Habits table-->
 <table class="table table-bordered text-center table-hover shadow mt-3">
   <thead class="thead-dark">
     <tr>
