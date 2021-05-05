@@ -15,7 +15,7 @@
   <div class="justify-content-center mt-2 mb-2" id="habit_form">
     <div class="field form-group">
       <%= form.label :date, class:"font-weight-bold" %></br>
-      <%= form.date_field :date , order: [:day, :month, :year], end_year: Date.today.year, required: true%>
+      <%= form.date_field :date , order: [:day, :month, :year], end_year: Date.today.year, value: Date.today, required: true%>
     </div>
 
     <div class="field form-group">

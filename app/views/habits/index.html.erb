@@ -7,21 +7,18 @@
 </div>
 
 <!-- Form desired date -->
-<%= form_with model: @habit do |form| %>
-  <div class="field form-group">
-      <%= form.label :date, class:"font-weight-bold" %></br>
-      <%= form.date_field :search_date , order: [:day, :month, :year], end_year: Date.today.year, required: true %>
-  </div>
-  <div class="actions my-2">
-    <%= form.submit class:'btn btn-info search-button'%>
-  </div>
+<div class="field form-group">
+<%= form_tag habits_path, method: :get do %>
+  <%= label_tag  "Date" %></br>
+  <%= date_field_tag :search, params[:search], value: Date.today %>
+  <%= submit_tag "Search" %>
 <% end %>
+</div>
 
 <!-- Habits table-->
 <table class="table table-bordered text-center table-hover shadow mt-3">
   <thead class="thead-dark">
     <tr>
-      <th>Date</th>
       <th>Category</th>
       <th>Duration</th>
       <th>Description</th>
@@ -30,15 +27,16 @@
   </thead>
 
   <tbody>
-    <% @habits.each do |habit| %>
-      <tr>
-        <td><%= habit.date %></td>
-        <td><%= habit.category %></td>
-        <td><%= habit.hours %> hr <%= habit.minutes %> min</td>
-        <td><%= habit.description %></td>
-        <td><%= link_to 'Edit', edit_habit_path(habit) %></td>
-        <td><%= link_to 'Delete', habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% @habits.each do |habit| %>
+      
+        <tr>
+          <td><%= habit.category %></td>
+          <td><%= habit.hours %> hr <%= habit.minutes %> min</td>
+          <td><%= habit.description %></td>
+          <td><%= link_to 'Edit', edit_habit_path(habit) %></td>
+          <td><%= link_to 'Delete', habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+     
     <% end %>
   </tbody>
 </table>
