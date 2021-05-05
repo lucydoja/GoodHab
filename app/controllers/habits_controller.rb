@@ -29,7 +29,7 @@ class HabitsController < ApplicationController
 
     respond_to do |format|
       if @habit.save
-        format.html { redirect_to habits_path, notice: "Habit was successfully created." }
+        format.html { redirect_to habits_path, notice: "Log was successfully added." }
         format.json { render :show, status: :created, location: @habit }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class HabitsController < ApplicationController
   def update
     respond_to do |format|
       if @habit.update(habit_params)
-        format.html { redirect_to habits_path, notice: "Habit was successfully updated." }
+        format.html { redirect_to habits_path, notice: "Log was successfully edited." }
         format.json { render :show, status: :ok, location: @habit }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class HabitsController < ApplicationController
   def destroy
     @habit.destroy
     respond_to do |format|
-      format.html { redirect_to habits_url, notice: "Habit was successfully destroyed." }
+      format.html { redirect_to habits_url, notice: "Log was successfully deleted." }
       format.json { head :no_content }
     end
   end
