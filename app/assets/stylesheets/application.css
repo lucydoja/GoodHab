@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+#input_form {
+	max-width: 600px;
+	margin: auto;
+};
+#table_container{
+	overflow-x: auto;
+}
