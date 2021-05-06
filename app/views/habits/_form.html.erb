@@ -19,12 +19,12 @@
     </div>
 
     <div class="field form-group">
-      <%= form.label :category, class:"font-weight-bold" %>
-      <%= form.text_field :category, class:"form-control", required: true %>
+      <%= form.label :category, class:"font-weight-bold d-flex" %>
+      <%= form.select(:category, Category.all.collect { |category| [category.name] }) %>
     </div>
 
     <div class="form-group">
-      <p , class="font-weight-bold">Duration</p>
+      <p , class="font-weight-bold mb-0">Duration</p>
       <div class="row">
         <div class="field col">
           <%= form.label :hours %>
