@@ -1,24 +1,16 @@
-# README
+# GoodHabs
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+GoodHabs is a web app where you can keep track of your daily positive habits. Here you'll be able to create the Categories that fit your needs (such as Exercising, Reading, Meditate, etc.) and log your daily activities to each one of them. This logs will be stored in the app and you can easily access them by date in the Tracker view.
 
-Things you may want to cover:
+### Functionalities
 
-* Ruby version
+- Add categotegories
+- Add daily logs (yes, you can add on previous days too)
+- Search by date
+- Sign up
+- Log in
+- Edit profile
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Technologies
+- Ruby on rails
+- sqlite3
