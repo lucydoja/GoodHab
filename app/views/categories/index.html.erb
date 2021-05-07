@@ -18,11 +18,13 @@
 
     <tbody>
       <% @categories.each do |category| %>
-        <tr>
-          <td><%= category.name %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
+        <% if category.user == current_user %>
+          <tr>
+            <td><%= category.name %></td>
+            <td><%= link_to 'Edit', edit_category_path(category) %></td>
+            <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>

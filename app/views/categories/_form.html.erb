@@ -15,11 +15,12 @@
     </div>
     <% end %>
 
-    
     <div class="field form-group my-3">
       <%= form.label :name, class:"font-weight-bold d-flex" %>
       <%= form.text_field :name, class:"form-control" %>
     </div>
+
+    <%= form.number_field :user_id, id: :category_user_id,value: current_user.id, type: :hidden %>
 
     <div class="actions d-flex my-2">
       <%= form.submit class:'btn btn-info btn-block'%>

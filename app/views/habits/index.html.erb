@@ -29,8 +29,8 @@
   </thead>
 
   <tbody>
-      <% @habits.each do |habit| %>
-      
+    <% @habits.each do |habit| %>
+      <% if habit.user == current_user %>
         <tr>
           <td><%= habit.category %></td>
           <td><%= habit.hours %> hr <%= habit.minutes %> min</td>
@@ -38,7 +38,7 @@
           <td><%= link_to 'Edit', edit_habit_path(habit) %></td>
           <td><%= link_to 'Delete', habit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
-     
+      <% end %>
     <% end %>
   </tbody>
 </table>

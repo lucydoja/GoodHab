@@ -21,7 +21,7 @@
 
     <div class="field form-group">
       <%= form.label :category, class:"font-weight-bold d-flex" %>
-      <%= form.select(:category, Category.all.collect { |category| [category.name] }) %>
+      <%= form.select(:category, current_user.categories.collect { |category| [category.name] }) %>
       <%= link_to "Add new category", new_category_path, class:"nav-link p-0 mt-2" %>
     </div>
 
@@ -41,8 +41,10 @@
 
     <div class="field form-group">
       <%= form.label :description, class:"font-weight-bold" %>
-      <%= form.text_field :description, class:"form-control", maxlength:30, required: true %>
+      <%= form.text_field :description, class:"form-control", maxlength:50 %>
     </div>
+
+    <%= form.number_field :user_id, id: :habit_user_id,value: current_user.id, type: :hidden %>
 
     <div class="actions d-flex my-2">
       <%= form.submit class:'btn btn-info btn-block'%>

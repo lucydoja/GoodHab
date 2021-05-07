@@ -1,5 +1,6 @@
 class HabitsController < ApplicationController
   before_action :set_habit, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /habits or /habits.json
   def index
@@ -68,6 +69,6 @@ class HabitsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def habit_params
-      params.require(:habit).permit(:date, :category, :hours, :minutes, :description)
+      params.require(:habit).permit(:date, :category, :hours, :minutes, :description, :user_id)
     end
 end
